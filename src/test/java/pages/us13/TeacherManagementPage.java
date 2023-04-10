@@ -17,6 +17,47 @@ public class TeacherManagementPage {
     @FindBy(linkText = "Teacher Management")
     public WebElement teacherManagement;
 
+    @FindBy(xpath = " //*[@class=' css-1wy0on6']")
+    public WebElement chooseLessons;
+
     @FindBy(xpath = "//*[@id='name']")
     public WebElement name;
+
+    @FindBy(xpath = "//*[@id='surname']")
+    public WebElement surname;
+
+    @FindBy(xpath = "//*[@id='birthPlace']")
+    public WebElement birthPlace;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement email;
+
+    @FindBy(xpath = "//*[@id='phoneNumber']")
+    public WebElement phoneNumber;
+
+    @FindBy(xpath = "//*[@id='isAdvisorTeacher']")
+    public WebElement isAdvisorTeacher;
+
+    @FindBy(xpath = "//*[@value='FEMALE']")
+    public WebElement genderFemale;
+
+    @FindBy(xpath = "//*[@value='MALE']")
+    public WebElement genderMale;
+
+    @FindBy(xpath = "//*[@id='birthDay']")
+    public WebElement dateOfBirth;
+
+    @FindBy(xpath = "//*[@id='ssn']")
+    public WebElement ssn;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement username;
+
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//*[@class='fw-semibold btn btn-primary btn-lg']")
+    public WebElement submit;
+
+
 }
