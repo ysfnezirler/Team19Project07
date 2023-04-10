@@ -173,4 +173,33 @@ public class ReusableMethods {
         return select.getFirstSelectedOption();
     }
 
+    public static String getValueByJS(String idOfElement)
+    {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String text = js.executeScript("return document.getElementById('" + idOfElement + "').value").toString();
+
+        return text;
+    }
+
+
+    public static void takeScreenshotOfElement(WebElement element) throws IOException
+    {
+//        1. take screenshot
+        File image = element.getScreenshotAs(OutputType.FILE);
+//        2. save screenshot
+//        path
+        String currentTime = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        String path = System.getProperty("user.dir") + "/test-output/Screenshots/" + currentTime + "image.png";
+        FileUtils.copyFile(image, new File(path));
+    }
+
+    public static void scrollIntoViewJS(WebElement element) {
+        JavascriptExecutor jse = ((JavascriptExecutor) Driver.getDriver());
+        jse.executeScript("arguments[0].scrollIntoView(true)", element);
+    }
+    public static void clickByJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", element);
+    }
+
 }
